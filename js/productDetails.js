@@ -94,7 +94,10 @@ function display(arr){
         image.src = ele.image;
         let btn = document.createElement("button");
         btn.innerText = "ADD";
-
+        btn.setAttribute("id","addBtn")
+        btn.addEventListener("click",function(){
+            addToCart(ele);
+        })
         menuNameDiv.append(name,price,desc);
         menuImageDiv.append(image,btn);
         let menu = document.createElement("div");
@@ -103,4 +106,13 @@ function display(arr){
         document.getElementById("menus").append(menu);
         document.getElementById("count").innerText = "("+ productsDeatilsPage.length + ")";
     })
+}
+
+cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+function addToCart(ele){
+    val = ele;
+    
+    cartItems.push(val);
+    localStorage.setItem("cartItems",JSON.stringify(cartItems));
+
 }
