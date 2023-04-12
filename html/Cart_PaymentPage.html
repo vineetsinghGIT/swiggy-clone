@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/CartPaymentPage.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root" style="height: 100%;">
+        <div class="_3arMG">
+            <header class="nav_bar">
+                <div class="global_nav">
+                    <div class="displayNav">
+                        <a href="#"><img id="navLogo" src="https://logosandtypes.com/wp-content/uploads/2021/01/Swiggy.png" alt=""></a>
+                        <div class="secureCheckout">
+                            <span>Secure Checkout</span>
+                        </div>
+                        <ul class="ullist">
+                            <li>Help</li>
+                            <li id="accountDetails"></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </header>
+            <div class="mid_container">
+                <div id="container">
+                    <div id="deliveryAddress">
+                        <div>
+                            <h3>Select Delivery Address</h3>
+                            <p id=""></p>
+                        </div>
+                    </div>
+                    <div id="payementCard">
+                        <div id="paymentBox">
+                            <h3>Choose payment method</h3>
+                            <div>
+                                <p>Add new Card</p>
+                                <div class="paymentMethod">
+                                    <span>WE ACCEPT</span>
+                                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/Visa_lztyeu" alt="" style="width: 37.06px; height: 12px;">
+                                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/Mastercard_wqoea2" alt="" style="width: 23.49px; height: 14px;">
+                                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/Amex_ozga1w" alt="" style="width: 22.4px; height: 14px;">
+                                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/Zeta_zybqrc" alt="" style="width: 32.29px; height: 12px;">
+                                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/RuPayColoured_oyd73s_soebkd" alt="" style="width: 53.48px; height: 14px;">
+                                </div>
+                                <div class="inputField">
+                                    <input type="number" placeholder="Card Number" id="card_number">
+                                    <div>
+                                        <input type="number" placeholder="Valid through (MM/YY)" id="mmyy">
+                                        <input type="number" placeholder="CVV" id="cvv"> 
+                                    </div>
+                                    <input type="text" placeholder="Name on Card" id="nameonCard"><br>
+                                    <button>Pay<span id="displayAmmount"></span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

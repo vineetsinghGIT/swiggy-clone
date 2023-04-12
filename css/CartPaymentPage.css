@@ -1,0 +1,61 @@
+body{
+    background-color: #e9ecee;
+}
+
+.displayNav{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    justify-content: space-between;
+}
+
+#navLogo{
+    width: 80px;
+    height: 80px;
+}
+
+.secureCheckout{
+    width: 400px;
+    padding-left: 18px;
+    font-size: 700;
+    text-transform: uppercase;
+    color: #3d4152;
+}
+
+.ullist{
+    margin-left:100px ;
+    width: 400px;
+    display: flex;
+    align-items: center;
+}
+
+ul{
+    list-style: none;    
+}
+
+/* navbar ends */
+
+#payementCard{
+    background-color: white;
+    width: 600px;
+    height: 400px;
+}
+
+#paymentBox{
+    position: absolute;
+    margin: 12px 40px 12px 18px;
+}
+
+.inputField{
+    margin: 8px;
+}
+
+.inputField  input{
+    width: 300px;
+    height: 40px;
+}
+
+.inputField > div > input{
+    width: 150px;
+    border-collapse: collapse;
+}
