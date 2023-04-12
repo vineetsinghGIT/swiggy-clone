@@ -30,7 +30,7 @@ const southData = [
             " Desserts",
         ],
         img_url:
-            "https://media-cdn.tripadvisor.com/media/photo-s/08/14/af/6d/barbeque-nation.jpg",
+            "https://im1.dineout.co.in/images/uploads/restaurant/sharpen/9/h/n/p95-16444959626205045ab0b43.jpg?tr=tr:n-large",
         veg: true,
 
     },
@@ -42,7 +42,7 @@ const southData = [
         average_time: 51,
         cuisines: ["Thalis", "North-Indian", "South-Indian"],
         img_url:
-            "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/cubytccah7xpfynim7cn",
+            "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/olthzs45ypqiklhsjuj6",
         veg: false,
 
     },
@@ -227,7 +227,7 @@ let displayData = () => {
         image.src = data.img_url;
         image.alt = "Image";
 
-        let name = document.createElement("h3");
+        let name = document.createElement("h4");
         name.textContent = data.name;
 
         let cusDiv = document.createElement("div");
@@ -254,3 +254,7 @@ let displayData = () => {
 
 }
 displayData();
+
+
+let restNum = document.getElementById("rest-number");
+restNum.textContent = southData.length + " restaurants";
