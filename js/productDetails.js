@@ -42,12 +42,12 @@ image : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w
 },
 {name : "Chatpata Chana Signature Wrap",
 price : 271.40,
-desc : "Serves 1 | Crave for more and get double portion of chatpata chana with this wrap. A perfect blend of chickpeas and Bengal gram along with nutritious vegetables and yummy sauces, packed inside a tortilla of your choice. Serving size : 301 g / 443 kcal. Allergens - Contains wheat, barley, oats. Values include 11.5"" multigrain wrap, lettuce, tomatoes, onions, green peppers and cucumbers.",
+desc : "Serves 1 | Crave for more and get double portion of chatpata chana with this wrap. A perfect blend of chickpeas and Bengal gram along with nutritious vegetables and yummy sauces, packed inside a tortilla of your choice. Serving size : 301 g / 443 kcal. Allergens - Contains wheat, barley, oats. Values include 11.5 multigrain wrap, lettuce, tomatoes, onions, green peppers and cucumbers.",
 image : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/cfyl5boxnbr15xkvzbut",
 },
 {name : "Veggie Delite Signature Wrap",
 price : 271.40,
-desc : "Serves 1 | A wholesome wrap that gives you double portion of nutritious veggies you love, with the best of sauces, packed inside a tortilla of your choice. Serving size : 181 g / 287 kcal. Allergens - Contains wheat, barley, oats. Values include 11.5"" multigrain wrap, lettuce, tomatoes, onions, green peppers and cucumbers.",
+desc : "Serves 1 | A wholesome wrap that gives you double portion of nutritious veggies you love, with the best of sauces, packed inside a tortilla of your choice. Serving size : 181 g / 287 kcal. Allergens - Contains wheat, barley, oats. Values include 11.5 multigrain wrap, lettuce, tomatoes, onions, green peppers and cucumbers.",
 image : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/raeb758kq0nnji0q9mmc",
 },
 {name : "Chicken Slice Toastie",
@@ -70,8 +70,37 @@ price : 14.28,
 desc : "Serves 1",
 image : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/omcwlxpxpfkubthi2j50",
 },
-
-
-
-
 ]
+
+
+display(productsDeatilsPage);
+
+function display(arr){
+    arr.map(function(ele,ind){
+        console.log("Hiii");
+        let menuNameDiv = document.createElement("div");
+        menuNameDiv.setAttribute("class","menuNameDiv")
+        let name = document.createElement("p");
+        name.setAttribute("class","name");
+        name.innerText = ele.name;
+        let price = document.createElement("p");
+        price.innerText  = "₹"+ ele.price;
+        let desc = document.createElement("p");
+        desc.setAttribute("class","desc");
+        desc.innerHTML = ele.desc;
+        let menuImageDiv = document.createElement("div");
+        menuImageDiv.setAttribute("class","menuImageDiv");
+        let image = document.createElement("img");
+        image.src = ele.image;
+        let btn = document.createElement("button");
+        btn.innerText = "ADD";
+
+        menuNameDiv.append(name,price,desc);
+        menuImageDiv.append(image,btn);
+        let menu = document.createElement("div");
+        menu.setAttribute("class","menu");
+        menu.append(menuNameDiv,menuImageDiv);
+        document.getElementById("menus").append(menu);
+        document.getElementById("count").innerText = "("+ productsDeatilsPage.length + ")";
+    })
+}
