@@ -1,4 +1,7 @@
 // let disAdd = document.getElementById("displayAddress");
+
+
+
 let totalPrice;
 let totalBill;
 
@@ -48,11 +51,22 @@ function displayCartItems(){
         let itemDisplayDiv = document.createElement("div");
         buyedItems.append(name,quantitydiv,price)
         document.getElementById("cartBox").append(buyedItems);
-
+        
     //  document.getElementById("cartBox").append(itemDisplayDiv) ;
     })
 
     // ------------------bill details -------------------
+
+    let promoDiv = document.createElement("div");
+    promoDiv.setAttribute("id","promoDiv");
+    let input = document.createElement("input");
+    input.placeholder = "Enter Coupon Code";
+    input.setAttribute("id","promoInput");
+    let promoBtn = document.createElement("button");
+    promoBtn.innerText = "APPLY";
+    promoBtn.addEventListener("click",promoValue);
+
+    promoDiv.append(input,promoBtn);
 
     let billDetails = document.createElement("h4");
     billDetails.textContent = "Bill Details" 
@@ -64,6 +78,7 @@ function displayCartItems(){
     itemsTotal.textContent = "Items Total";
 
     let itemsTotalNum = document.createElement("p");
+    itemsTotalNum.setAttribute("id","itemsTotalNum");
     itemsTotalNum.textContent =  totalPrice.toFixed(2); 
 
     itemsTotalDiv.append(itemsTotal,itemsTotalNum);
@@ -77,8 +92,9 @@ function displayCartItems(){
     govtCharges.textContent = "Govt Taxes & Other Charge";
 
     let govtChargesNum = document.createElement("p");
+    govtChargesNum.setAttribute("id","govtChargesNum");
     let aftertax = (18*totalPrice)%100;
-    totalBill= aftertax+totalPrice  ; 
+    totalBill= aftertax+totalPrice; 
 
     govtChargesNum.textContent =aftertax.toFixed(2);
     govtChargesDiv.append(govtCharges,govtChargesNum);
@@ -95,12 +111,13 @@ function displayCartItems(){
      toPay.textContent="To Pay";
     
      let toPayAmmount = document.createElement("h3");
+     toPayAmmount.setAttribute("id","toPayAmmount");
      toPayAmmount.textContent =  totalBill.toFixed(2); 
     //  console.log(totalPrice);
 
      toPayDiv.append(toPay,toPayAmmount);
 
-     document.getElementById("cartBox").append(billDetails,itemsTotalDiv,govtChargesDiv,hrline,toPayDiv);
+     document.getElementById("cartBox").append(promoDiv, billDetails,itemsTotalDiv,govtChargesDiv,hrline,toPayDiv);
      document.getElementById("displayAmmount").textContent="  ₹"+ totalBill.toFixed(2);
 }
 
@@ -149,4 +166,24 @@ function cardDetailsFun(){
             }
         }
     }
+}
+
+// Promo Input function -----------------------
+
+function promoValue(){
+        console.log("Hiii");
+    let Promovalue = document.getElementById("promoInput").value;
+    let totalvalue;
+    let aftertax ;
+    if (Promovalue == "YOO10"){
+        console.log(totalPrice);
+        totalvalue = (totalPrice - totalPrice*10/100).toFixed(2);
+        aftertax = ((18*totalvalue)%100).toFixed(2);
+    }
+    document.getElementById("itemsTotalNum").innerText = totalvalue;
+    document.getElementById("govtChargesNum").innerText = aftertax;
+    finaltotalPromo = (Math.floor(totalvalue) +Math.floor(aftertax)).toFixed(2);
+    document.getElementById("toPayAmmount").innerText = finaltotalPromo;
+    document.getElementById("displayAmmount").textContent="  ₹"+ finaltotalPromo;
+    // document.getElementById("" 
 }
