@@ -1,6 +1,6 @@
 *{
     font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
-}
+ }
 
 a{
     text-decoration: none;
@@ -135,3 +135,32 @@ a{
     font-weight: 550;
    
 }
+
+.bottom-div {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    width: 57%;
+    height: 35px;
+    padding: 10px;
+    margin: 0px 320px 0px 320px;
+    padding: 2px;
+    background-color: #60b246;
+    border-top: 1px solid #ddd;
+  }
+  
+  #internal{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-family: 600;
+  }
+  #internal  h4{
+    margin: 2px;
+    padding: 6px;
+  }
+   #internal  p{
+    margin: 2px;
+    padding: 6px;
+  }
