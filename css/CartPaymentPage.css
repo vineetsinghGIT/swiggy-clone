@@ -1,5 +1,7 @@
 body{
     background-color: #e9ecee;
+    font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+
 }
 
 .displayNav{
@@ -163,6 +165,10 @@ ul{
 
 .quantiyDiv{
     display: flex;
+    border: 1px solid rgb(230, 220, 220);
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
 }
 
 .quantiyDiv button{
@@ -172,10 +178,13 @@ ul{
     border: none;
     background-color: white;
     color: #60b246;
+    align-items: center;
 }
 
 .buyedItems{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .cartBox  p{
@@ -198,7 +207,7 @@ ul{
 
 
 .buyedItemsNames{
-    width: 260px;
+    width: 230px;
 }
 
 .toPayClass{

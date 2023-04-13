@@ -179,11 +179,14 @@ function promoValue(){
         console.log(totalPrice);
         totalvalue = (totalPrice - totalPrice*10/100).toFixed(2);
         aftertax = ((18*totalvalue)%100).toFixed(2);
-    }
-    document.getElementById("itemsTotalNum").innerText = totalvalue;
+        document.getElementById("itemsTotalNum").innerText = totalvalue;
     document.getElementById("govtChargesNum").innerText = aftertax;
     finaltotalPromo = (Math.floor(totalvalue) +Math.floor(aftertax)).toFixed(2);
     document.getElementById("toPayAmmount").innerText = finaltotalPromo;
     document.getElementById("displayAmmount").textContent="  ₹"+ finaltotalPromo;
+    }
+    else{
+        alert("Please Check the Coupon Code");
+    }
     // document.getElementById("" 
 }
