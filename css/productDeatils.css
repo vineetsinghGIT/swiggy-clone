@@ -158,9 +158,10 @@ a{
   }
   #internal  h4{
     margin: 2px;
-    padding: 6px;
+    padding: 10px;
   }
    #internal  p{
     margin: 2px;
-    padding: 6px;
+    padding: 10px;
+    font-size: 15px;
   }

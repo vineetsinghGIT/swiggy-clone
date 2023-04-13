@@ -128,5 +128,5 @@ function addToCart(ele){
     cartItems.push(val);
     localStorage.setItem("cartItems",JSON.stringify(cartItems));
     document.getElementById("bottomDiv").style.display = "block";
-    document.getElementById("producttotalItem").innerText = cartItems.length + " " +" | Items Added";
+    document.getElementById("producttotalItem").innerText = cartItems.length  + " | Items Added";
 }
