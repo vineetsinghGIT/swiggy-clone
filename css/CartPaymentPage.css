@@ -35,15 +35,34 @@ ul{
 
 /* navbar ends */
 
+
+
+/* --------------Payment Card------------------- */
+
 #payementCard{
-    background-color: white;
     width: 600px;
-    height: 400px;
+    background-color: white;
+    /* height: 400px; */
+}
+
+.mid_container{
+    display: flex;
 }
 
 #paymentBox{
     position: absolute;
-    margin: 12px 40px 12px 18px;
+    padding: 18px, 8px 8px, 16px;
+    background-color: white;
+    /* background-color: white; */
+}
+
+#paymentBox h3{
+    margin-top: 28px;
+    text-align: center;
+}
+
+.paymentMethod img{
+    margin-right: 16px;
 }
 
 .inputField{
@@ -51,11 +70,77 @@ ul{
 }
 
 .inputField  input{
-    width: 300px;
+    /* width: 300px;
     height: 40px;
+     */
+     background-color: transparent;
+    line-height: normal;
+    border: grey solid 1px;
+    outline: none;
+    height: 70px;
+    width: 100%;
+    font-size: 17px;
+    margin: 0;
+    padding: 0 20px;
+    padding-top: 22px;
+    box-shadow: none;
+    box-sizing: border-box;
+    border-radius: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
 }
 
 .inputField > div > input{
-    width: 150px;
-    border-collapse: collapse;
+    width: 300px;
+    border: grey solid 1px;
+    margin: 0px ;
+    
+}
+
+.inputField > div > input+input{
+    width: 221.6px;
+}
+
+#buton{
+    display: flex;
+    justify-content: center;
+}
+
+#payBtn{
+    width: 200px;
+    padding: 12px;
+    text-align: center;
+    color: white;
+    background-color: #60b246;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 25px;
+}
+
+#addnewCard{
+    color: #282c3f;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 25px;
+    margin-left: 18px ;
+}
+
+#weAccept{
+    font-size: 12px;
+    font-weight: 500;
+    color: #7e808c;
+    white-space: nowrap;
+    text-transform: uppercase;
+    margin-right: 5px;
+    margin-left: 18px ;
+}
+
+/* ---------------Payment Card End---------------- */
+
+/* -----------------Cart Box Display---------------- */
+
+.quantiyDiv{
+    display: flex;
 }
