@@ -1,7 +1,7 @@
 body {
 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+    font-weight: lighter;
 
 }
 
@@ -14,25 +14,37 @@ body {
 
 }
 
+#page-banner img {
+    width: 83%;
+    margin-left: 8.5%;
+    border-radius: 0 0 50px 50px;
+}
+
+#zone-banner {
+    width: 83%;
+    margin-left: 8.5%;
+}
+
+#zone-banner div a {
+    /* width: 8%; */
+    text-decoration: none;
+}
+
+#zone-banner div img {
+    width: 8%;
+    text-decoration: none;
+}
+
 #main-container div {
     text-align: center;
 }
 
 #main-container div:hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     cursor: pointer;
     border: 1px solid rgb(209, 206, 206);
 }
 
-#main-container div div {
-    box-shadow: none;
-
-}
-
-#main-container div div :hover {
-    box-shadow: none;
-
-}
 
 #main-container div img {
     width: 250px;
@@ -45,7 +57,6 @@ body {
     display: inline-flex;
     width: 30%;
     text-align: center;
-
 }
 
 #upper-container {
@@ -101,4 +112,67 @@ body {
 .filter-container {
     text-align: end;
     width: 70%;
+}
+
+.rating-container {
+    margin-right: 15%;
+    background-color: lightgreen;
+    padding: 4px;
+
+}
+
+#btn-rel {
+    text-decoration: none;
+    border: none;
+    background-color: white;
+    font-size: 15px;
+}
+
+#btn-lowtohigh {
+    text-decoration: none;
+    border: none;
+    background-color: white;
+    font-size: 15px;
+
+}
+
+#btn-hightolow {
+    text-decoration: none;
+    border: none;
+    background-color: white;
+    font-size: 15px;
+}
+
+#btn-deliverytime {
+    text-decoration: none;
+    border: none;
+    background-color: white;
+    font-size: 15px;
+}
+
+#btn-rating {
+    text-decoration: none;
+    border: none;
+    background-color: white;
+    font-size: 15px;
+}
+
+#main-container .avgcost-container {
+    font-size: 13px;
+    width: 40%;
+}
+
+#main-container .avgtime-container {
+    font-size: 13px;
+    width: 30%;
+}
+
+#main-container .rating-container {
+    font-size: 13px;
+    width: 30%;
+}
+
+#main-container .cush-container {
+    font-size: 15px;
+
 }

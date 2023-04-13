@@ -56,6 +56,26 @@ const northdata = [
     },
     {
 
+        name: "Hotel Tarini cottage",
+        rating: 3.9,
+        average_cost: 200,
+        average_time: 38,
+        cuisines: [
+            " North Indian",
+            "South Indian",
+            " Chinese",
+            " Fast Food",
+            " Seafood",
+            " Thalis",
+            " Combo",
+        ],
+        img_url:
+            "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ktzvvqnosehdyxcjtoi7",
+        veg: true,
+
+    },
+    {
+
         name: "House of Biryani",
         rating: 3.9,
         average_cost: 250,
@@ -281,26 +301,6 @@ const northdata = [
     },
     {
 
-        name: "Hotel Tarini cottage",
-        rating: 3.9,
-        average_cost: 200,
-        average_time: 38,
-        cuisines: [
-            " North Indian",
-            "South Indian",
-            " Chinese",
-            " Fast Food",
-            " Seafood",
-            " Thalis",
-            " Combo",
-        ],
-        img_url:
-            "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ktzvvqnosehdyxcjtoi7",
-        veg: true,
-
-    },
-    {
-
         name: "BIRYANISTIC",
         rating: random(),
         average_cost: 280,
@@ -353,39 +353,55 @@ let displayData = (northdata) => {
 
         let cusDiv = document.createElement("div");
         cusDiv.textContent = data.cuisines;
+        cusDiv.classList.add("cush-container")
+        cusDiv.style.boxShadow = "none";
+        cusDiv.style.border = "none";
 
-        let rating = document.createElement("p");
+        let rating = document.createElement("span");
         rating.textContent = " ★ " + data.rating;
         rating.classList.add("rating-container");
 
-        let avgcast = document.createElement("p");
-        avgcast.textContent = " ₹ " + data.average_cost + " FOR TWO";
+        let avgcost = document.createElement("p");
+        avgcost.textContent = "•  " + " ₹ " + data.average_cost + " FOR TWO";
+        avgcost.classList.add("avgcost-container")
 
         let avgtime = document.createElement("p");
-        avgtime.textContent = data.average_time + " min";
+        avgtime.textContent = "• " + data.average_time + " min";
+        avgtime.classList.add("avgtime-container")
 
         let newdiv = document.createElement("div");
-        // let div = document.createElement("div");
 
-
-        newdiv.append(image, name, cusDiv, rating, avgtime, avgcast);
+        newdiv.append(image, name, cusDiv, rating, avgtime, avgcost);
 
         mainDiv.appendChild(newdiv);
+
+        newdiv.addEventListener("click", function () {
+            nextPage(data);
+        })
 
     })
 
 }
 displayData(northdata);
 
-document.getElementById("btn-rel").addEventListener("click", relevance)
-
-function relevance() {
-    // console.log(">>>>>>>>>>>>>>>")
-    document.location.reload();
+let restLocalData = [];
+function nextPage(cafeData) {
+    restLocalData.push(cafeData);
+    localStorage.setItem("restaurant-Data", JSON.stringify(restLocalData));
+    window.location.href = "";
 }
+
 
 let restNum = document.getElementById("rest-number");
 restNum.textContent = northdata.length + " restaurants";
+
+document.getElementById("btn-rel").addEventListener("click", relevance)
+
+function relevance() {
+
+    document.location.reload();
+    restNum.textContent = northdata.length + " restaurants";
+}
 
 document.getElementById("btn-lowtohigh").addEventListener("click", lowtohigh)
 
@@ -428,33 +444,39 @@ function ratingFilter() {
             return (ratingdata.rating <= 5 && ratingdata.rating >= 4)
         })
         displayData(changeArr);
+        restNum.textContent = changeArr.length + " restaurants";
     }
     if (changeValue == "4-3") {
         let changeArr = northdata.filter((ratingdata) => {
             return (ratingdata.rating <= 3.9 && ratingdata.rating >= 3)
         })
         displayData(changeArr);
+        restNum.textContent = changeArr.length + " restaurants";
     }
     if (changeValue == "3-2") {
         let changeArr = northdata.filter((ratingdata) => {
             return (ratingdata.rating <= 2.9 && ratingdata.rating >= 2)
         })
         displayData(changeArr);
+        restNum.textContent = changeArr.length + " restaurants";
     }
     if (changeValue == "2-1") {
         let changeArr = northdata.filter((ratingdata) => {
             return (ratingdata.rating <= 1.9 && ratingdata.rating >= 1)
         })
         displayData(changeArr);
+        restNum.textContent = changeArr.length + " restaurants";
     }
     if (changeValue == "0-1") {
         let changeArr = northdata.filter((ratingdata) => {
             return (ratingdata.rating <= 0.9 && ratingdata.rating >= 0)
         })
         displayData(changeArr);
+        restNum.textContent = changeArr.length + " restaurants";
     }
     if (changeValue == "") {
         displayData(northdata);
+        restNum.textContent = northdata.length + " restaurants";
     }
 
 }

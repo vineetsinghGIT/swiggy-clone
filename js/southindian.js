@@ -217,11 +217,11 @@ const southData = [
 
 ]
 
-let displayData = () => {
+let displayData = (northdata) => {
     let mainDiv = document.getElementById("main-container");
     mainDiv.innerHTML = "";
 
-    southData.forEach(data => {
+    northdata.forEach(data => {
 
         let image = document.createElement("img");
         image.src = data.img_url;
@@ -232,29 +232,133 @@ let displayData = () => {
 
         let cusDiv = document.createElement("div");
         cusDiv.textContent = data.cuisines;
+        cusDiv.classList.add("cush-container")
+        cusDiv.style.boxShadow = "none";
+        cusDiv.style.border = "none";
 
-        let rating = document.createElement("p");
+        let rating = document.createElement("span");
         rating.textContent = " ★ " + data.rating;
+        rating.classList.add("rating-container");
 
-        let avgcast = document.createElement("p");
-        avgcast.textContent = " ₹ " + data.average_cost + " FOR TWO";
+        let avgcost = document.createElement("p");
+        avgcost.textContent = "•  " + " ₹ " + data.average_cost + " FOR TWO";
+        avgcost.classList.add("avgcost-container")
 
         let avgtime = document.createElement("p");
-        avgtime.textContent = data.average_time + " min";
+        avgtime.textContent = "• " + data.average_time + " min";
+        avgtime.classList.add("avgtime-container")
 
         let newdiv = document.createElement("div");
-        let div = document.createElement("div");
+        // let div = document.createElement("div");
 
 
-        newdiv.append(image, name, cusDiv, rating, avgtime, avgcast);
+        newdiv.append(image, name, cusDiv, rating, avgtime, avgcost);
 
         mainDiv.appendChild(newdiv);
+
+        newdiv.addEventListener("click", function () {
+            nextPage(data);
+        })
 
     })
 
 }
-displayData();
+displayData(southData);
 
+let restLocalData = [];
+function nextPage(cafeData) {
+    restLocalData.push(cafeData);
+    localStorage.setItem("restaurant-Data", JSON.stringify(restLocalData));
+    window.location.href = "";
+}
 
 let restNum = document.getElementById("rest-number");
 restNum.textContent = southData.length + " restaurants";
+
+
+document.getElementById("btn-rel").addEventListener("click", relevance)
+
+function relevance() {
+    document.location.reload();
+    restNum.textContent = southData.length + " restaurants";
+}
+
+document.getElementById("btn-lowtohigh").addEventListener("click", lowtohigh)
+
+function lowtohigh() {
+
+    let lowtohighArr = southData.sort((a, b) => {
+        return parseInt(a.average_cost) - parseInt(b.average_cost);
+    })
+
+    displayData(lowtohighArr);
+}
+
+document.getElementById("btn-hightolow").addEventListener("click", hightolow)
+
+function hightolow() {
+
+    let hightolowArr = southData.sort((a, b) => {
+        return parseInt(b.average_cost) - parseInt(a.average_cost);
+    })
+    displayData(hightolowArr);
+}
+
+document.getElementById("btn-deliverytime").addEventListener("click", deliveryTime)
+
+function deliveryTime() {
+
+    let deliveryArr = southData.sort((a, b) => {
+        return parseInt(a.average_time) - parseInt(b.average_time);
+    })
+
+    displayData(deliveryArr);
+}
+
+document.getElementById("btn-rating").addEventListener("change", ratingFilter)
+
+function ratingFilter() {
+
+    let changeValue = document.getElementById("btn-rating").value;
+    if (changeValue == "5-4") {
+        let changeArr = southData.filter((ratingdata) => {
+            return (ratingdata.rating <= 5 && ratingdata.rating >= 4)
+        })
+        displayData(changeArr);
+        restNum.textContent = changeArr.length + " restaurants";
+    }
+    if (changeValue == "4-3") {
+        let changeArr = southData.filter((ratingdata) => {
+            return (ratingdata.rating <= 3.9 && ratingdata.rating >= 3)
+        })
+        displayData(changeArr);
+        restNum.textContent = changeArr.length + " restaurants";
+    }
+    if (changeValue == "3-2") {
+        let changeArr = southData.filter((ratingdata) => {
+            return (ratingdata.rating <= 2.9 && ratingdata.rating >= 2)
+        })
+        displayData(changeArr);
+        restNum.textContent = changeArr.length + " restaurants";
+    }
+    if (changeValue == "2-1") {
+        let changeArr = southData.filter((ratingdata) => {
+            return (ratingdata.rating <= 1.9 && ratingdata.rating >= 1)
+        })
+        displayData(changeArr);
+        restNum.textContent = changeArr.length + " restaurants";
+    }
+    if (changeValue == "0-1") {
+        let changeArr = southData.filter((ratingdata) => {
+            return (ratingdata.rating <= 0.9 && ratingdata.rating >= 0)
+        })
+        displayData(changeArr);
+        restNum.textContent = changeArr.length + " restaurants";
+    }
+    if (changeValue == "") {
+        displayData(southData);
+        restNum.textContent = southData.length + " restaurants";
+    }
+
+
+}
