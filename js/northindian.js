@@ -37,7 +37,7 @@ const northdata = [
 
         name: "Wow!Momo",
         rating: 4.4,
-        average_cost: 300,
+        average_cost: 340,
         average_time: 38,
         cuisines: [
             "Tibetian",
@@ -58,7 +58,7 @@ const northdata = [
 
         name: "House of Biryani",
         rating: 3.9,
-        average_cost: 200,
+        average_cost: 250,
         average_time: 26,
         cuisines: ["Indian", " Chinese"],
         img_url:
@@ -91,8 +91,8 @@ const northdata = [
     {
 
         name: "DHABA",
-        rating: 4.1,
-        average_cost: 200,
+        rating: random(),
+        average_cost: 280,
         average_time: 40,
         cuisines: ["Fast-Food", "Tandoor"],
         img_url:
@@ -115,8 +115,8 @@ const northdata = [
     {
 
         name: "DALCHA BIRYANI",
-        rating: 3.8,
-        average_cost: 300,
+        rating: random(),
+        average_cost: 370,
         average_time: 42,
         cuisines: ["Biryani", " Indian"],
         img_url:
@@ -139,7 +139,7 @@ const northdata = [
 
         name: "SECRET KITCHEN",
         rating: random(),
-        average_cost: 200,
+        average_cost: 310,
         average_time: 57,
         cuisines: ["Indian", " Chinese", " Tandoor"],
         img_url:
@@ -163,7 +163,7 @@ const northdata = [
 
         name: "Kwality Walls Frozen Dessert and Ice Cream Shop",
         rating: 4.6,
-        average_cost: 200,
+        average_cost: 370,
         average_time: 29,
         cuisines: ["Ice Cream", " Desserts"],
         img_url:
@@ -175,7 +175,7 @@ const northdata = [
 
         name: "SAYHALLO KANCHAN",
         rating: random(),
-        average_cost: 249,
+        average_cost: 600,
         average_time: 44,
         cuisines: ["North Indian", " Chinese", " Biryani"],
         img_url:
@@ -210,7 +210,7 @@ const northdata = [
     {
 
         name: "GOLDEN ORCHID",
-        rating: 3.6,
+        rating: random(),
         average_cost: 300,
         average_time: 40,
         cuisines: ["Chinese", " Combo", " North Indian", " South Indian"],
@@ -223,7 +223,7 @@ const northdata = [
 
         name: "Afiya Delight The Restaurant",
         rating: 3.6,
-        average_cost: 300,
+        average_cost: 480,
         average_time: 35,
         cuisines: ["Indian", " Chinese", " Tandoor"],
         img_url:
@@ -271,7 +271,7 @@ const northdata = [
 
         name: "OFO FOODS",
         rating: random(),
-        average_cost: 400,
+        average_cost: 430,
         average_time: 35,
         cuisines: ["Chinese", " Biryani", " Indian", " Arabian", " Continental"],
         img_url:
@@ -326,7 +326,7 @@ const northdata = [
     {
 
         name: "The Tandoori Night",
-        rating: 3.4,
+        rating: random(),
         average_cost: 200,
         average_time: 35,
         cuisines: ["North Indian", " Chinese", " Tandoor"],
@@ -356,6 +356,7 @@ let displayData = (northdata) => {
 
         let rating = document.createElement("p");
         rating.textContent = " ★ " + data.rating;
+        rating.classList.add("rating-container");
 
         let avgcast = document.createElement("p");
         avgcast.textContent = " ₹ " + data.average_cost + " FOR TWO";
@@ -364,7 +365,7 @@ let displayData = (northdata) => {
         avgtime.textContent = data.average_time + " min";
 
         let newdiv = document.createElement("div");
-        let div = document.createElement("div");
+        // let div = document.createElement("div");
 
 
         newdiv.append(image, name, cusDiv, rating, avgtime, avgcast);
@@ -376,5 +377,85 @@ let displayData = (northdata) => {
 }
 displayData(northdata);
 
+document.getElementById("btn-rel").addEventListener("click", relevance)
+
+function relevance() {
+    // console.log(">>>>>>>>>>>>>>>")
+    document.location.reload();
+}
+
 let restNum = document.getElementById("rest-number");
 restNum.textContent = northdata.length + " restaurants";
+
+document.getElementById("btn-lowtohigh").addEventListener("click", lowtohigh)
+
+function lowtohigh() {
+
+    let lowtohighArr = northdata.sort((a, b) => {
+        return parseInt(a.average_cost) - parseInt(b.average_cost);
+    })
+
+    displayData(lowtohighArr);
+}
+
+document.getElementById("btn-hightolow").addEventListener("click", hightolow)
+
+function hightolow() {
+
+    let hightolowArr = northdata.sort((a, b) => {
+        return parseInt(b.average_cost) - parseInt(a.average_cost);
+    })
+    // document.getElementById("btn-hightolow").style.fontWeight = "bold";
+    displayData(hightolowArr);
+}
+
+document.getElementById("btn-deliverytime").addEventListener("click", deliveryTime)
+
+function deliveryTime() {
+
+    let deliveryArr = northdata.sort((a, b) => {
+        return parseInt(a.average_time) - parseInt(b.average_time);
+    })
+
+    displayData(deliveryArr);
+}
+
+document.getElementById("btn-rating").addEventListener("change", ratingFilter)
+
+function ratingFilter() {
+    let changeValue = document.getElementById("btn-rating").value;
+    if (changeValue == "5-4") {
+        let changeArr = northdata.filter((ratingdata) => {
+            return (ratingdata.rating <= 5 && ratingdata.rating >= 4)
+        })
+        displayData(changeArr);
+    }
+    if (changeValue == "4-3") {
+        let changeArr = northdata.filter((ratingdata) => {
+            return (ratingdata.rating <= 3.9 && ratingdata.rating >= 3)
+        })
+        displayData(changeArr);
+    }
+    if (changeValue == "3-2") {
+        let changeArr = northdata.filter((ratingdata) => {
+            return (ratingdata.rating <= 2.9 && ratingdata.rating >= 2)
+        })
+        displayData(changeArr);
+    }
+    if (changeValue == "2-1") {
+        let changeArr = northdata.filter((ratingdata) => {
+            return (ratingdata.rating <= 1.9 && ratingdata.rating >= 1)
+        })
+        displayData(changeArr);
+    }
+    if (changeValue == "0-1") {
+        let changeArr = northdata.filter((ratingdata) => {
+            return (ratingdata.rating <= 0.9 && ratingdata.rating >= 0)
+        })
+        displayData(changeArr);
+    }
+    if (changeValue == "") {
+        displayData(northdata);
+    }
+
+}
