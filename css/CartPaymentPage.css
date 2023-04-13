@@ -141,6 +141,71 @@ ul{
 
 /* -----------------Cart Box Display---------------- */
 
+#cartBox{
+    background-color: white;
+    margin-top: 20px;
+    padding: 48px;
+
+    /* display: flex; */
+}
+
+.mid_container{
+    display: flex;
+    justify-content: center;
+}
+
+.toPayClass{
+    font-weight: 600;
+    color: #282c3f;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
 .quantiyDiv{
     display: flex;
+}
+
+.quantiyDiv button{
+    width: 30px;
+    font-size: 16px;
+    margin: 0px 4px;
+    border: none;
+    background-color: white;
+    color: #60b246;
+}
+
+.buyedItems{
+    display: flex;
+}
+
+.cartBox  p{
+    font-size: 13px;
+    color: #535665;
+}
+
+.itemsQuantity{
+    color: #60b246;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.itemsTotalClass, .govtChargesClass{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.buyedItemsNames{
+    width: 260px;
+}
+
+.toPayClass{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    cursor: pointer;
 }

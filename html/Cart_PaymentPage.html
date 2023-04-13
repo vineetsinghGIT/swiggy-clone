@@ -10,7 +10,7 @@
 <body>
     <div id="root" style="height: 100%;">
         <div class="_3arMG">
-            <header class="nav_bar">
+            <!-- <header class="nav_bar">
                 <div class="global_nav">
                     <div class="displayNav">
                         <a href="#"><img id="navLogo" src="https://logosandtypes.com/wp-content/uploads/2021/01/Swiggy.png" alt=""></a>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
 
-            </header>
+            </header> -->
             <div class="mid_container">
                 <div id="container">
                     <div id="deliveryAddress">
@@ -49,10 +49,10 @@
                                 <div class="inputField">
                                     <input type="text" name="cardNumber" placeholder="Card Number" id="card_number"  maxlength="16" required>
                                     <div>
-                                        <input type="text" placeholder="Valid through (MM/YY)" id="mmyy" >
+                                        <input type="text" placeholder="Valid through (MM/YY)" id="mmyy"  maxlength="5" required>
                                         <input type="text" placeholder="CVV" id="cvv" maxlength="3" required> 
                                     </div>
-                                    <input type="text" placeholder="Name on Card" id="nameonCard"><br>
+                                    <input type="text" placeholder="Name on Card" id="nameonCard" required><br>
                                 </div>
                                 <div id="buton">
                                     <button id="payBtn">Pay<span id="displayAmmount"></span></button>
@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <div id="cartBox">
-
+                    
                 </div>
             </div>
             <div class="footer">
@@ -108,4 +108,4 @@ let DataArray = [
 ]
 
 localStorage.setItem("cartItems",JSON.stringify(DataArray))</script>
-<script type="text/javascript" src="../js/Cart_PaymentPage.js"></script>
+<script type="text/javascript" src="../script/Cart_PaymentPage.js"></script>
