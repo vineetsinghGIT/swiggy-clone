@@ -124,9 +124,14 @@ function display(arr){
 
 cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 function addToCart(ele){
+    let amount = 0;
     val = ele;
     cartItems.push(val);
     localStorage.setItem("cartItems",JSON.stringify(cartItems));
     document.getElementById("bottomDiv").style.display = "block";
-    document.getElementById("producttotalItem").innerText = cartItems.length  + " | Items Added";
+    
+    cartItems.map(function(ele){
+        amount += ele.price;
+    })
+    document.getElementById("producttotalItem").innerText = cartItems.length + " Item" + " | " + "₹ " + (amount).toFixed(2);
 }
