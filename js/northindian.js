@@ -405,7 +405,6 @@ function hightolow() {
     let hightolowArr = northdata.sort((a, b) => {
         return parseInt(b.average_cost) - parseInt(a.average_cost);
     })
-    // document.getElementById("btn-hightolow").style.fontWeight = "bold";
     displayData(hightolowArr);
 }
 
