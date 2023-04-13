@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup</title>
+   <style>
+    body {
+    background: #f1f1f1;
+    font-family: Arial, sans-serif;
+}
+
+.signup-box {
+    width: 400px;
+    background: #fff;
+    color: #333;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.signup-box img {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.signup-box h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.signup-box form {
+    text-align: left;
+}
+
+.signup-box label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.signup-box input[type="text"],
+.signup-box input[type="email"],
+.signup-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.signup-box input[type="submit"] {
+    background: #fc8019;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.signup-box input[type="submit"]:hover {
+    background: #e27000;
+}
+
+.signup-box a {
+    display: block;
+    margin-top: 20px;
+    color: #666;
+    text-decoration: none;
+}
+
+.signup-box a:hover {
+    color: #fc8019;
+}
+
+.alert {
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    color: #fff;
+    float: right;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+   </style>
+</head>
+<body>
+    <div class="signup-box">
+        <img src="swiggy-logo.png" alt="Swiggy Logo">
+        <h1>Signup</h1>
+        <form id="signup-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            <input type="submit" value="Signup">
+        </form>
+        <a href="login.html">Already have an account? Login</a>
+    </div>
+</body>
+</html>
+<script>
+    const form = document.querySelector('#signup-form');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const passwordInput = document.querySelector('#password');
+const confirmPasswordInput = document.querySelector('#confirm-password');
+const alertBox = document.querySelector('.alert');
+const closeBtn = document.querySelector('.close-btn');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (validateInputs()) {
+        alertBox.style.display = 'none';
+        // Submit form to server
+        console.log('Form submitted');
+    } else {
+        alertBox.style.display = 'block';
+    }
+});
+
+closeBtn.addEventListener('click', () => {
+    alertBox.style.display = 'none';
+});
+
+function validateInputs() {
+    let valid = true;
+    const nameValue = nameInput.value.trim();
+    const emailValue = emailInput.value.trim();
+    const passwordValue = passwordInput.value.trim();
+    const confirmPasswordValue = confirmPasswordInput.value.trim();
+
+    // Validate name
+    if (nameValue === '') {
+        setErrorFor(nameInput, 'Name cannot be blank');
+        valid = false;
+    } else {
+        setSuccessFor(nameInput);
+    }
+
+    // Validate email
+    if (emailValue === '') {
+        setErrorFor(emailInput, 'Email cannot be blank');
+        valid = false;
+    } else if (!isValidEmail(emailValue)) {
+        setErrorFor(emailInput, 'Invalid email format');
+        valid = false;
+    } else {
+        setSuccessFor(emailInput);
+    }
+
+    // Validate password
+    if (passwordValue === '') {
+        setErrorFor(passwordInput, 'Password cannot be blank');
+        valid = false;
+    } else {
+        setSuccessFor(passwordInput);
+    }
+
+    // Validate confirm password
+    if (confirmPasswordValue === '') {
+        setErrorFor(confirmPasswordInput, 'Confirm Password cannot be blank');
+        valid = false;
+    } else if (confirmPasswordValue !== passwordValue) {
+        setErrorFor(confirmPasswordInput, 'Passwords do not match');
+        valid = false;
+    } else {
+        setSuccessFor(confirmPasswordInput);
+    }
+
+    return valid;
+}
+
+function setErrorFor(input, message) {
+    const formControl = input.parentElement;
+    const errorMessage = formControl.querySelector('.error-message');
+    formControl.className = 'form-control error';
+    errorMessage.innerText = message;
+}
+
+function setSuccessFor(input) {
+    const formControl = input.parentElement;
+    formControl.className = 'form-control success';
+}
+
+function isValidEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+}
+
+</script>

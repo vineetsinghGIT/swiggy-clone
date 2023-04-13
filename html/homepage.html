@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+
+    <title>Swiggy</title>
     <style>
         
         #nav-container{
@@ -131,8 +132,81 @@ line-height: 1.3;
 text-align: center;
    }
 
+   .below-midcont{
+      display: flex;
+      justify-content: space-around;
+   }
+   .part1-img{
+    display: flex;
     
+   } 
+   .part1{
+     padding-top: 150px; 
+     padding-left: 70px; 
+   }
+   .part1-img img{
+    width: 38%;
+   }
+   .part2{
+    display: flex;
+    justify-content: end;
+   }
+   .part2>img{
+    display: flex;
+    width: 35%;
+   }
+   /* ----------------------------FOOTER------------------------------------------- */
+   #footer{
+    background-color: black;
+    padding: 80px;
+   }
+   .footer1{
+    display: flex;
+    justify-content: space-evenly;
+    color: #fff;
+   }
+   .footer1 ul img{
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+     width: 95%;
+     height: 80px;
+     display: block;
+      margin-top: 30px;
+   }
+   .footer1 ul li{
+    width: 300px;
+    margin: 10px;
+    font-size: large;
+   }
+   .footer1 ul h3{
+    color: rgb(167, 164, 164);
+    margin-bottom: 40px;
+   }
+   .footer hr{
+    color: rgb(167, 164, 164);
+    width: 1px;
+   }
+   ul.a {list-style-type: none;}
+   .footer-img{
+    display: flex;
+    justify-content: space-between;
+     margin-top: 40px;
+     align-items: center;
+     align-content: center;
+   }
+   .footer-img img{
+     width: 120px;
+     height: 60px;
+   }
+   .footer2-img{
+    justify-content: space-evenly;
    
+   }
+   .footer2-img img{
+    width: 40px;
+    height: 20px;
+    margin: 5px;
+   }
 
     </style>
 </head>
@@ -143,9 +217,9 @@ text-align: center;
             <nav>
                  <img src="swiggy-logo.png" alt="">
                  <div class="btn">
-                    <button class="btn1"><a href="">Login /</a></button>
+                    <button class="btn1"><a href="login.html">Login /</a></button>
                      
-                    <button class="btn2"><a href="http://">Sign-up</a></button>
+                    <button class="btn2"><a href="signup.html">Sign-up</a></button>
                  </div>
                 </nav>
                  <h1>Late night at office?</h1>
@@ -185,11 +259,15 @@ text-align: center;
           
         </div>
         <div class="below-midcont">
-            <h1>Restaurants in your pocket</h1>
-           <h4>Restaurants in your pocket</h4>
+          
            <div class="part1">
-            <img src="google-play.webp" alt="">
-            <img src="iOS_ajgrty.webp" alt="">
+            <h1>Restaurants in your pocket</h1>
+            <h4>Restaurants in your pocket</h4>
+            <div class="part1-img">
+                <img src="google-play.webp" alt="">
+                <img src="iOS_ajgrty.webp" alt="">
+            </div>
+          
 
            </div>
            <div class="part2">
@@ -200,7 +278,54 @@ text-align: center;
 
     </div>
     <div id="footer">
-
+        <div class="footer1">
+         
+            <ul class="a">
+                <h3>COMPANY</h3>
+                <li> About us</li>
+                <li>Team</li>
+                <li>Careers</li>
+                <li>Swiggy Blog</li>
+                <li>Bug Bounty</li>
+                <li>Swiggy One</li>
+                <li>Swiggy Corporate</li>
+                <li>Swiggy Instamart</li>
+                <li>Swiggy Genie</li>
+               </ul>
+               <ul class="a">
+                <h3>CONTACT</h3>
+                <li>Help & Support</li>
+                <li>Partner with us</li>
+                <li>Ride with us</li>
+               </ul>
+               <ul class="a">
+                <h3>LEGAL</h3>
+                 <li> Terms & Conditions</li>
+                 <li>Refund & Cancellation</li>
+                 <li>Privacy Policy</li>
+                 <li>Cookie Policy</li>
+                 <li>Offer Terms</li>
+                 <li>Phishing & Fraud</li>
+                 <li>Corporate – Swiggy Money Codes Terms and Conditions</li>
+                 <li>Corporate - Swiggy Discount Voucher Terms and Conditions</li>
+               </ul>
+               <ul>
+                <img src="google-play.webp" alt="">
+                    <img src="iOS_ajgrty.webp" alt="">
+               </ul> 
+               
+        </div>
+        <hr>
+        <div class="footer-img">
+            <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_284/Logo_f5xzza" alt="">
+            <!-- <img src="" alt=""> -->
+            <div class="footer2-img">
+                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-facebook_tfqsuc" alt="">
+                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-pinterest_kmz2wd" alt="">
+                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-instagram_b7nubh" alt="">
+                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-twitter_gtq8dv" alt="">
+            </div>
+        </div>
     </div>
     </div>
 </body>
