@@ -135,3 +135,11 @@ function addToCart(ele){
     })
     document.getElementById("producttotalItem").innerText = cartItems.length + " Item" + " | " + "₹ " + (amount).toFixed(2);
 }
+
+
+document.querySelector(".bottom-div").addEventListener("click",RedirectCart);
+
+
+function RedirectCart(){
+    window.location.href = "Cart_PaymentPage.html";
+}
