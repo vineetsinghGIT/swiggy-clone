@@ -184,8 +184,10 @@ function cardDetailsFun(){
 document.getElementById("addNewAddress").addEventListener("click",displayAdress);
 
 function displayAdress(){
+    localStorage.removeItem("addressLS")
     document.getElementById("adressDetailForm").style.display= "block";
     document.getElementById("displayAddressDiv").style.display="none";
+    // localStorage.removeItem("addressLS");
 }
 
 
@@ -221,35 +223,36 @@ function addressSaveFun(){
     localStorage.setItem("addressLS",JSON.stringify(addressArray));
     document.getElementById("adressDetailForm").style.display= "none";
     document.getElementById("displayAddressDiv").style.display="block";
+    
+   
 
-    // addressArray.map(function(elem){
-    //     let diplaySavedAddress = document.createElement("div");
-    //     diplaySavedAddress.setAttribute("class","savedAddress")
+    // ------------------ Saved Address Display ------------------------
 
-    //     let firstDiv = document.createElement("div");
-    //     let secondDiv = document.createElement("div");
+        let elem = addressArray[addressArray.length -1];
+    
+        let diplaySavedAddress = document.createElement("div");
+        diplaySavedAddress.setAttribute("class","savedAddress")
 
-    //     let deliveryAddress = document.createElement("h4");
-    //     deliveryAddress.textContent = "Delivery Address";
+        let firstDiv = document.createElement("div");
+        let secondDiv = document.createElement("div");
 
-    //     let fullAddress = document.createElement("p");
-    //     fullAddress.textContent = elem.houseNo+" "+elem.area+" "+elem.landmark+" "+elem.city;
+        let deliveryAddress = document.createElement("h4");
+        deliveryAddress.textContent = "Delivery Address";
 
-    //     let deliverBtn = document.createElement("button");
-    //     deliverBtn.textContent = "Deliver Here";
+        let fullAddress = document.createElement("p");
+        fullAddress.style.color = "#60b246";
+        fullAddress.style.padding = "8px";
+        fullAddress.style.textAlign = "center"
+        fullAddress.textContent = elem.houseNo+" "+elem.area+" "+elem.landmark+" "+elem.city;
 
-    //     secondDiv.append(deliveryAddress, fullAddress, deliverBtn);
+        secondDiv.append(deliveryAddress, fullAddress);
 
-    //     firstDiv.append(secondDiv);
-    //     diplaySavedAddress.append(firstDiv);
+        firstDiv.append(secondDiv);
+        diplaySavedAddress.append(firstDiv);
 
-    //     document.getElementById("displayAddressDiv").append(diplaySavedAddress);
-    // })
+        document.getElementById("displayAddressDiv").append(diplaySavedAddress);
 
-    houseNo.textContent = "";
-    area.textContent = "";
-    landmark.textContent = "";
-    city.textContent = "";
+    // ---------------------------------------------------
 
 
 }

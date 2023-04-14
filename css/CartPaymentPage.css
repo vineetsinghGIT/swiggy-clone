@@ -363,3 +363,27 @@ button{
 
 }
 /* >>>>>>> 3a1fa0881cc4b7ac9e7554be0fd4a0e0d8782bba */
+
+
+.savedAddress >div {
+    width: 218.59px;
+    height: 164.6px;
+    padding: 23px 30px;
+}
+
+.savedAddress >div>div {
+    display: flex;
+    width: 218.59px;
+    height: 164.6px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 300;
+    border: #7e808c dotted 1px;
+    /* margin-left: 20px ; */
+} 
+
+/* #displayAddressDiv{
+    display: grid;
+    grid-template-columns: repeat(1fr , 2);
+} */
