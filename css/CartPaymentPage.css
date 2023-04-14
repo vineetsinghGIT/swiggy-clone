@@ -1,6 +1,10 @@
 body{
     background-color: #e9ecee;
     font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+/* <<<<<<< HEAD
+=======
+
+>>>>>>> 3a1fa0881cc4b7ac9e7554be0fd4a0e0d8782bba */
 }
 
 .displayNav{
@@ -165,9 +169,16 @@ ul{
 
 .quantiyDiv{
     display: flex;
+/* <<<<<<< HEAD */
     border: #7e808c dotted 1px;
     margin-right: 8px;
     height: 40px;
+/* ======= */
+    border: 1px solid rgb(230, 220, 220);
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+/* >>>>>>> 3a1fa0881cc4b7ac9e7554be0fd4a0e0d8782bba */
 }
 
 .quantiyDiv button{
@@ -177,13 +188,19 @@ ul{
     border: none;
     background-color: white;
     color: #60b246;
+    align-items: center;
 }
 
 .buyedItems{
     display: flex;
+/* <<<<<<< HEAD */
     justify-content: space-evenly;
     align-items: center;
     margin: 8px;
+/* ======= */
+    align-items: center;
+    justify-content: space-between;
+/* >>>>>>> 3a1fa0881cc4b7ac9e7554be0fd4a0e0d8782bba */
 }
 
 .cartBox  p{
@@ -206,7 +223,7 @@ ul{
 
 
 .buyedItemsNames{
-    width: 260px;
+    width: 230px;
 }
 
 .toPayClass{
@@ -218,6 +235,7 @@ button{
     cursor: pointer;
 }
 
+/* <<<<<<< HEAD */
 #cartBox  p{
     font-size: 13px;
 }
@@ -321,3 +339,27 @@ button{
     font-weight: 600;
     border: none;
 }
+/* ======= */
+#promoDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 16px;
+}
+#promoDiv > input {
+    width: 180px;
+    height: 21px;
+    padding: 10px;
+    font-weight: 600;
+    border: 1px solid rgb(190, 188, 188);
+}
+#promoDiv > button {
+    padding: 14px 25px 14px 25px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #fc8019;
+    border: none;
+    color: white;
+
+}
+/* >>>>>>> 3a1fa0881cc4b7ac9e7554be0fd4a0e0d8782bba */
