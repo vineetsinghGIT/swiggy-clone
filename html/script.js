@@ -96,6 +96,7 @@ signupForm.addEventListener('submit', (event) => {
 
   // Show success message
   alert('Sign up successful');
+  window.location.href = "homepage.html";
 });
 
 // Function to validate email address
