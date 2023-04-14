@@ -12,10 +12,11 @@
         .otp-container {
             max-width: 300px;
             height: 300px;
-            margin: 5% auto;
+            margin: 2% auto;
             padding: 20px;
-            border: 1px solid #ccc;
+            /* border: 1px solid #ccc; */
             border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
         }
 
         .otp-input {
@@ -35,15 +36,31 @@
             margin-top: 20px;
         }
 
-        .otp-container>h2 {
-            padding: 10px;
+        .otp-container>h6 {
+            padding: 5px;
+            font-size: 18px;
+            text-align: center;
+
         }
+        #otptop{
+            display: block;
+            width: 100px;
+            margin: auto;
+            /* border: 1px solid; */
+        }
+        img{
+            width: 100%;
+        }
+
     </style>
 </head>
 
 <body>
+    <div id="otptop">
+        <img src="https://cdn-images-1.medium.com/max/1200/1*v5SYqjYEdQMPIwNduRrnCw.png" alt="">
+    </div>
     <div class="otp-container">
-        <h2>One-Time Password (OTP)</h2>
+        <h6>One-Time Password (OTP)</h6>
         <p>Please enter the Valid OTP :</p>
         <input type="text" class="otp-input" id="otpInput" placeholder="Enter OTP">
         <br>

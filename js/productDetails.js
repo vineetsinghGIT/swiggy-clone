@@ -143,3 +143,4 @@ document.querySelector(".bottom-div").addEventListener("click",RedirectCart);
 function RedirectCart(){
     window.location.href = "Cart_PaymentPage.html";
 }
+

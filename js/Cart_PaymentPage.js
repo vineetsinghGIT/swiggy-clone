@@ -67,6 +67,8 @@ function displayCartItems() {
     promoBtn.addEventListener("click", promoValue);
 
     promoDiv.append(input, promoBtn);
+    let divforupdate = document.createElement("div");
+    divforupdate.setAttribute("id","divforupdate");
 
     let billDetails = document.createElement("h4");
     billDetails.textContent = "Bill Details"
@@ -117,7 +119,7 @@ function displayCartItems() {
 
     toPayDiv.append(toPay, toPayAmmount);
 
-    document.getElementById("cartBox").append(promoDiv, billDetails, itemsTotalDiv, govtChargesDiv, hrline, toPayDiv);
+    document.getElementById("cartBox").append(promoDiv,divforupdate, billDetails, itemsTotalDiv, govtChargesDiv, hrline, toPayDiv);
     document.getElementById("displayAmmount").textContent = "  ₹" + totalBill.toFixed(2);
 }
 
@@ -274,6 +276,9 @@ function promoValue() {
         finaltotalPromo = (Math.floor(totalvalue) + Math.floor(aftertax)).toFixed(2);
         document.getElementById("toPayAmmount").innerText = finaltotalPromo;
         document.getElementById("displayAmmount").textContent = "  ₹" + finaltotalPromo;
+        let hurray = document.createElement("h3");
+        hurray.innerText = "Applied 10% discount";
+        document.getElementById("divforupdate").append(hurray);
     }
     else {
         alert("Please Check the Coupon Code");
