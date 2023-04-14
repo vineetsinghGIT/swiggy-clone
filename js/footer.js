@@ -1,77 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details Page</title>
-    <link rel="stylesheet" href="../css/productDeatils.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
-
-</head>
-
-<body>
-    <div id="mainBody">
-    <div id="navigationBar">
-        <div>
-            <a href="">Home /</a>
-            <a href="">Banglore /</a>
-            <a href="">Subway</a>
-        </div>
-        <div>
-            <button>
-                <img src="../images/search.PNG" alt="">
-            </button>
-        </div>
-    </div>
-    <br>
-    <div id="titleAndDetails">
-        <div id="titleDiv">
-            <h2>Subway</h2>
-            <p>Fast food , Salads</p>
-            <p>Ashok Nagar</p>
-            <p >2 kms | ₹50 Delivery fee will apply </p>
-        </div>
-        <div id="ratingDiv">
-        <p><img src="../images/star.PNG" alt=""> <b>4.3</b> </p>
-        <p>1k rating</p>
-
-        </div>
-    </div>
-    <div id="timmerDiv">
-    <img src="../images/timmer.PNG" alt=""><p><b>41  min</b> </p>
-    <img src="../images/rupee.PNG" alt=""><p><b>₹350 for two </b></p>
-    </div>
-    <div id="offersDiv">
-        <div >
-           <img src="../images/offer1.PNG" alt="offer1">
-        </div>
-        <div>
-            <img src="../images/offer2.PNG" alt="offer2">
-        </div>
-        <div>
-            <img src="../images/offer3.PNG" alt="offer3">
-        </div>
-    </div>
-    <br></br>
-    <h4>Veg Only</h4>
-        <hr>
-        <h3>Recommended <span id="count"></span> </h3>
-    <div id="menus">
-       
-    </div>
-    <div id="bottomDiv" class="bottom-div">
-        <div id="internal">
-            <h4 id="producttotalItem"></h4>
-            <p>VIEW CART</p>
-        </div>
-      
-      </div>
-    </div>
-        <div id="footer">
+const footer = () => {
+    return `
+    <div id="footer">
             <div class="footer1">
 
                 <ul class="a">
@@ -126,10 +55,7 @@
                 </div>
             </div>
         </div>
-    
+    `
+}
 
-
-</body>
-
-</html>
-<script src="../js/productDetails.js"></script>
+export default footer
