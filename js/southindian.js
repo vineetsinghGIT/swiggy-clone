@@ -292,6 +292,7 @@ function lowtohigh() {
     })
 
     displayData(lowtohighArr);
+    restNum.textContent = southData.length + " restaurants";
 }
 
 document.getElementById("btn-hightolow").addEventListener("click", hightolow)
@@ -302,6 +303,7 @@ function hightolow() {
         return parseInt(b.average_cost) - parseInt(a.average_cost);
     })
     displayData(hightolowArr);
+    restNum.textContent = southData.length + " restaurants";
 }
 
 document.getElementById("btn-deliverytime").addEventListener("click", deliveryTime)
@@ -313,6 +315,7 @@ function deliveryTime() {
     })
 
     displayData(deliveryArr);
+    restNum.textContent = southData.length + " restaurants";
 }
 
 document.getElementById("btn-rating").addEventListener("change", ratingFilter)
