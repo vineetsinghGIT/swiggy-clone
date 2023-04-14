@@ -393,7 +393,7 @@ let restLocalData = [];
 function nextPage(cafeData) {
     restLocalData.push(cafeData);
     localStorage.setItem("restaurant-Data", JSON.stringify(restLocalData));
-    window.location = "../html/southindian.html";
+    window.location = "../html/productdetail.html";
 }
 
 

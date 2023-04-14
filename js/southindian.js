@@ -273,7 +273,7 @@ let restLocalData = [];
 function nextPage(cafeData) {
     restLocalData.push(cafeData);
     localStorage.setItem("restaurant-Data", JSON.stringify(restLocalData));
-    window.location.href = "";
+    window.location = "../html/productdetail.html";
 }
 
 let restNum = document.getElementById("rest-number");

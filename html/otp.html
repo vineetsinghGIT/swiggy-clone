@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>One-Time Password (OTP) Page</title>
     <style>
         body {
-           
-    font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+
+            font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
         }
+
         .otp-container {
             max-width: 300px;
             height: 300px;
@@ -15,11 +17,13 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         .otp-input {
             width: 90%;
             padding: 10px;
             margin-bottom: 10px;
         }
+
         .otp-button {
             width: 100%;
             padding: 10px;
@@ -30,11 +34,13 @@
             font-size: 16px;
             margin-top: 20px;
         }
-        .otp-container > h2{
+
+        .otp-container>h2 {
             padding: 10px;
         }
     </style>
 </head>
+
 <body>
     <div class="otp-container">
         <h2>One-Time Password (OTP)</h2>
@@ -50,10 +56,12 @@
 
             if (otpInput === '1234') {
                 alert('OTP is valid!');
+                document.location = "./Successfull.html"
             } else {
                 alert('Invalid OTP. Please try again.');
             }
         }
     </script>
 </body>
+
 </html>
