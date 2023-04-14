@@ -147,6 +147,90 @@ function cardDetailsFun(){
             if(cvv == 123){
                 console.log("Bank Account Verified")
             }
+            else{
+                alert("Wrong CVV");
+            }
+        }
+        else{
+            alert("Wrong Expiry Month")
         }
     }
+    else{
+        alert("Wrong Card Number")
+    }
+}
+
+// ----------------------- Address Form----------------// 
+
+
+document.getElementById("addNewAddress").addEventListener("click",displayAdress);
+
+function displayAdress(){
+    document.getElementById("adressDetailForm").style.display= "block";
+    document.getElementById("displayAddressDiv").style.display="none";
+}
+
+
+// --------------------- Address Save button -----------------
+
+document.getElementById("addreeSaveBtn").addEventListener("click",addressSaveFun)
+
+let addressArray = JSON.parse(localStorage.getItem("addressLS")) || [];
+
+
+function addressSaveFun(){
+
+    let houseNo = document.getElementById("house").value;
+    let area = document.getElementById("area").value;
+    let landmark = document.getElementById("landmark").value;
+    let city = document.getElementById("city").value;
+
+    for(let i=0; i < addressArray.length; i++){
+        if(addressArray[i].houseNo == houseNo && addressArray[i].area == area && addressArray[i].landmark == landmark && addressArray[i].city == city){
+            return alert("This address already exsists");
+        }
+    }
+    
+
+    let addressObj = {
+        houseNo: houseNo,
+        area: area,
+        landmark: landmark,
+        city: city,    
+    }
+
+    addressArray.push(addressObj);
+    localStorage.setItem("addressLS",JSON.stringify(addressArray));
+    document.getElementById("adressDetailForm").style.display= "none";
+    document.getElementById("displayAddressDiv").style.display="block";
+
+    // addressArray.map(function(elem){
+    //     let diplaySavedAddress = document.createElement("div");
+    //     diplaySavedAddress.setAttribute("class","savedAddress")
+
+    //     let firstDiv = document.createElement("div");
+    //     let secondDiv = document.createElement("div");
+
+    //     let deliveryAddress = document.createElement("h4");
+    //     deliveryAddress.textContent = "Delivery Address";
+
+    //     let fullAddress = document.createElement("p");
+    //     fullAddress.textContent = elem.houseNo+" "+elem.area+" "+elem.landmark+" "+elem.city;
+
+    //     let deliverBtn = document.createElement("button");
+    //     deliverBtn.textContent = "Deliver Here";
+
+    //     secondDiv.append(deliveryAddress, fullAddress, deliverBtn);
+
+    //     firstDiv.append(secondDiv);
+    //     diplaySavedAddress.append(firstDiv);
+
+    //     document.getElementById("displayAddressDiv").append(diplaySavedAddress);
+    // })
+
+    houseNo.textContent = "";
+    area.textContent = "";
+    landmark.textContent = "";
+    city.textContent = "";
+
 }

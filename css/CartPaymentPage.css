@@ -1,5 +1,6 @@
 body{
     background-color: #e9ecee;
+    font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
 }
 
 .displayNav{
@@ -145,6 +146,7 @@ ul{
     background-color: white;
     margin-top: 20px;
     padding: 48px;
+    
 
     /* display: flex; */
 }
@@ -163,6 +165,9 @@ ul{
 
 .quantiyDiv{
     display: flex;
+    border: #7e808c dotted 1px;
+    margin-right: 8px;
+    height: 40px;
 }
 
 .quantiyDiv button{
@@ -176,6 +181,9 @@ ul{
 
 .buyedItems{
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 8px;
 }
 
 .cartBox  p{
@@ -208,4 +216,108 @@ ul{
 
 button{
     cursor: pointer;
+}
+
+#cartBox  p{
+    font-size: 13px;
+}
+
+/* ----------------- Add new address ------------------ */
+
+#displayAddress{
+    background-color: white;
+    width: 542.50px;
+    margin-bottom: 28px;
+}
+
+#newAddressSave{
+    width: 324px;
+    height: 218px;
+}
+
+/* #newAddressSave div{
+    display: flex;
+    flex-direction: column;
+    width: 218.59px;
+    height: 164.6px;
+    padding: 23px 30px ;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 300;
+    border: #7e808c solid 1px;
+    
+} */
+
+#newAddressSave >div {
+    width: 218.59px;
+    height: 164.6px;
+    padding: 23px 30px ;
+}
+
+#newAddressSave >div>div {
+    display: flex;
+    height: 164.6px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 300;
+    border: #7e808c dotted 1px;
+} 
+
+#addNewAddress{
+    width: 130px;
+    height: 34px;
+    color: #60b246;
+    border: #60b246 solid 1px;
+    background-color: white;
+}
+
+#adressDetailForm{
+    display: none;
+    padding: 20px;
+}
+
+#addressInput{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+#addressInput input{
+    background-color: transparent;
+    line-height: normal;
+    border: grey solid 1px;
+    outline: none;
+    height: 70px;
+    width: 100%;
+    font-size: 17px;
+    margin: 0;
+    padding: 0 20px;
+    padding-top: 22px;
+    box-shadow: none;
+    box-sizing: border-box;
+    border-radius: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+}
+
+#addBtnDiv{
+    display: flex;
+    justify-content: center;
+}
+
+#addreeSaveBtn{
+    width: 300px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #fc8019;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.12);
+    font-weight: 600;
+    border: none;
 }
