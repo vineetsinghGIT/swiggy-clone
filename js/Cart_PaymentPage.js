@@ -7,118 +7,118 @@ let totalBill;
 
 let dataArray = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-function displayCartItems(){
+function displayCartItems() {
     totalPrice = 0;
     document.getElementById("cartBox").textContent = "";
 
-    dataArray.map(function(elem,index){
-    
+    dataArray.map(function (elem, index) {
+
         let buyedItems = document.createElement("div");
-        buyedItems.setAttribute("class","buyedItems")
-    
+        buyedItems.setAttribute("class", "buyedItems")
+
         let name = document.createElement("p");
         name.textContent = elem.name;
-        name.setAttribute("class","buyedItemsNames")
+        name.setAttribute("class", "buyedItemsNames")
 
         let quantitydiv = document.createElement("div");
-        quantitydiv.setAttribute("class","quantiyDiv")
+        quantitydiv.setAttribute("class", "quantiyDiv")
 
         let minusbtn = document.createElement("button");
-        minusbtn.textContent= "-";
+        minusbtn.textContent = "-";
 
-        minusbtn.addEventListener("click", function(){
-            minusbtnFun(elem.i,index);
-        }) 
+        minusbtn.addEventListener("click", function () {
+            minusbtnFun(elem.i, index);
+        })
 
         let quntityNum = document.createElement("p");
         quntityNum.textContent = elem.i;
-        quntityNum.setAttribute("class","itemsQuantity")
+        quntityNum.setAttribute("class", "itemsQuantity")
 
         let addbtn = document.createElement("button");
-        addbtn.textContent="+";
+        addbtn.textContent = "+";
 
-        addbtn.addEventListener("click",function(){
-            addbtnFun(elem.i,index);
+        addbtn.addEventListener("click", function () {
+            addbtnFun(elem.i, index);
         })
 
-        quantitydiv.append(minusbtn,quntityNum,addbtn );
+        quantitydiv.append(minusbtn, quntityNum, addbtn);
 
         let price = document.createElement("p");
-        price.textContent = "₹"+(elem.price*elem.i).toFixed(2);
+        price.textContent = "₹" + (elem.price * elem.i).toFixed(2);
 
-        totalPrice=totalPrice+(elem.price*elem.i);
+        totalPrice = totalPrice + (elem.price * elem.i);
 
         let itemDisplayDiv = document.createElement("div");
-        buyedItems.append(name,quantitydiv,price)
+        buyedItems.append(name, quantitydiv, price)
         document.getElementById("cartBox").append(buyedItems);
-        
-    //  document.getElementById("cartBox").append(itemDisplayDiv) ;
+
+        //  document.getElementById("cartBox").append(itemDisplayDiv) ;
     })
 
     // ------------------bill details -------------------
 
     let promoDiv = document.createElement("div");
-    promoDiv.setAttribute("id","promoDiv");
+    promoDiv.setAttribute("id", "promoDiv");
     let input = document.createElement("input");
     input.placeholder = "Enter Coupon Code";
-    input.setAttribute("id","promoInput");
+    input.setAttribute("id", "promoInput");
     let promoBtn = document.createElement("button");
     promoBtn.innerText = "APPLY";
-    promoBtn.addEventListener("click",promoValue);
+    promoBtn.addEventListener("click", promoValue);
 
-    promoDiv.append(input,promoBtn);
+    promoDiv.append(input, promoBtn);
 
     let billDetails = document.createElement("h4");
-    billDetails.textContent = "Bill Details" 
+    billDetails.textContent = "Bill Details"
 
     let itemsTotalDiv = document.createElement("div");
-    itemsTotalDiv.setAttribute("class","itemsTotalClass")
+    itemsTotalDiv.setAttribute("class", "itemsTotalClass")
 
     let itemsTotal = document.createElement("p");
     itemsTotal.textContent = "Items Total";
 
     let itemsTotalNum = document.createElement("p");
-    itemsTotalNum.setAttribute("id","itemsTotalNum");
-    itemsTotalNum.textContent =  totalPrice.toFixed(2); 
+    itemsTotalNum.setAttribute("id", "itemsTotalNum");
+    itemsTotalNum.textContent = totalPrice.toFixed(2);
 
-    itemsTotalDiv.append(itemsTotal,itemsTotalNum);
+    itemsTotalDiv.append(itemsTotal, itemsTotalNum);
 
     // ------------------Govt Charges--------------------
 
     let govtChargesDiv = document.createElement("div");
-    govtChargesDiv.setAttribute("class","govtChargesClass");
+    govtChargesDiv.setAttribute("class", "govtChargesClass");
 
     let govtCharges = document.createElement("p");
     govtCharges.textContent = "Govt Taxes & Other Charge";
 
     let govtChargesNum = document.createElement("p");
-    govtChargesNum.setAttribute("id","govtChargesNum");
-    let aftertax = (18*totalPrice)%100;
-    totalBill= aftertax+totalPrice; 
+    govtChargesNum.setAttribute("id", "govtChargesNum");
+    let aftertax = (18 * totalPrice) % 100;
+    totalBill = aftertax + totalPrice;
 
-    govtChargesNum.textContent =aftertax.toFixed(2);
-    govtChargesDiv.append(govtCharges,govtChargesNum);
+    govtChargesNum.textContent = aftertax.toFixed(2);
+    govtChargesDiv.append(govtCharges, govtChargesNum);
 
     // ---------------------------------------------------
 
     let hrline = document.createElement("hr");
-    hrline.setAttribute("class","hrclass")
+    hrline.setAttribute("class", "hrclass")
 
     let toPayDiv = document.createElement("div");
-    toPayDiv.setAttribute("class","toPayClass")
+    toPayDiv.setAttribute("class", "toPayClass")
 
-     let toPay = document.createElement("h3");
-     toPay.textContent="To Pay";
-    
-     let toPayAmmount = document.createElement("h3");
-     toPayAmmount.setAttribute("id","toPayAmmount");
-     toPayAmmount.textContent =  totalBill.toFixed(2); 
+    let toPay = document.createElement("h3");
+    toPay.textContent = "To Pay";
+
+    let toPayAmmount = document.createElement("h3");
+    toPayAmmount.setAttribute("id", "toPayAmmount");
+    toPayAmmount.textContent = totalBill.toFixed(2);
     //  console.log(totalPrice);
 
-     toPayDiv.append(toPay,toPayAmmount);
+    toPayDiv.append(toPay, toPayAmmount);
 
-     document.getElementById("cartBox").append(promoDiv, billDetails,itemsTotalDiv,govtChargesDiv,hrline,toPayDiv);
-     document.getElementById("displayAmmount").textContent="  ₹"+ totalBill.toFixed(2);
+    document.getElementById("cartBox").append(promoDiv, billDetails, itemsTotalDiv, govtChargesDiv, hrline, toPayDiv);
+    document.getElementById("displayAmmount").textContent = "  ₹" + totalBill.toFixed(2);
 }
 
 
@@ -126,22 +126,22 @@ function displayCartItems(){
 displayCartItems();
 
 
-function minusbtnFun(item,index){
-    if(item>1){
+function minusbtnFun(item, index) {
+    if (item > 1) {
         item--;
-        dataArray[index].i=item;
+        dataArray[index].i = item;
     }
-    else{
-        dataArray.splice(index,1);
+    else {
+        dataArray.splice(index, 1);
     }
-    localStorage.setItem("cartItems",JSON.stringify(dataArray));
+    localStorage.setItem("cartItems", JSON.stringify(dataArray));
     displayCartItems();
 }
 
-function addbtnFun(item,index){
+function addbtnFun(item, index) {
     item++;
-    dataArray[index].i=item;
-    localStorage.setItem("cartItems",JSON.stringify(dataArray));
+    dataArray[index].i = item;
+    localStorage.setItem("cartItems", JSON.stringify(dataArray));
     displayCartItems();
 }
 
@@ -149,31 +149,32 @@ function addbtnFun(item,index){
 
 // -------------Card Information taking -----------------
 
-document.getElementById("payBtn").addEventListener("click",cardDetailsFun)
+document.getElementById("payBtn").addEventListener("click", cardDetailsFun)
 
-function cardDetailsFun(){
+function cardDetailsFun() {
     let cardNum = document.getElementById("card_number").value;
     let validThrough = document.getElementById("mmyy").value;
     let cvv = document.getElementById("cvv").value;
     console.log(cardNum)
 
 
-    if(cardNum == 1234123412341234){
+    if (cardNum == 1234123412341234) {
         console.log(cardNum)
-        if(validThrough == "05/23"){
-            if(cvv == 123){
+        if (validThrough == "05/23") {
+            if (cvv == 123) {
                 console.log("Bank Account Verified")
+                document.location = "../html/otp.html"
             }
-            else{
+            else {
                 alert("Wrong CVV");
             }
         }
-        else{
+        else {
             alert("Wrong Expiry Month")
         }
     }
-// <<<<<<< HEAD
-    else{
+    // <<<<<<< HEAD
+    else {
         alert("Wrong Card Number")
     }
 }
@@ -181,76 +182,76 @@ function cardDetailsFun(){
 // ----------------------- Address Form----------------// 
 
 
-document.getElementById("addNewAddress").addEventListener("click",displayAdress);
+document.getElementById("addNewAddress").addEventListener("click", displayAdress);
 
-function displayAdress(){
+function displayAdress() {
     localStorage.removeItem("addressLS")
-    document.getElementById("adressDetailForm").style.display= "block";
-    document.getElementById("displayAddressDiv").style.display="none";
+    document.getElementById("adressDetailForm").style.display = "block";
+    document.getElementById("displayAddressDiv").style.display = "none";
     // localStorage.removeItem("addressLS");
 }
 
 
 // --------------------- Address Save button -----------------
 
-document.getElementById("addreeSaveBtn").addEventListener("click",addressSaveFun)
+document.getElementById("addreeSaveBtn").addEventListener("click", addressSaveFun)
 
 let addressArray = JSON.parse(localStorage.getItem("addressLS")) || [];
 
 
-function addressSaveFun(){
+function addressSaveFun() {
 
     let houseNo = document.getElementById("house").value;
     let area = document.getElementById("area").value;
     let landmark = document.getElementById("landmark").value;
     let city = document.getElementById("city").value;
 
-    for(let i=0; i < addressArray.length; i++){
-        if(addressArray[i].houseNo == houseNo && addressArray[i].area == area && addressArray[i].landmark == landmark && addressArray[i].city == city){
+    for (let i = 0; i < addressArray.length; i++) {
+        if (addressArray[i].houseNo == houseNo && addressArray[i].area == area && addressArray[i].landmark == landmark && addressArray[i].city == city) {
             return alert("This address already exsists");
         }
     }
-    
+
 
     let addressObj = {
         houseNo: houseNo,
         area: area,
         landmark: landmark,
-        city: city,    
+        city: city,
     }
 
     addressArray.push(addressObj);
-    localStorage.setItem("addressLS",JSON.stringify(addressArray));
-    document.getElementById("adressDetailForm").style.display= "none";
-    document.getElementById("displayAddressDiv").style.display="block";
-    
-   
+    localStorage.setItem("addressLS", JSON.stringify(addressArray));
+    document.getElementById("adressDetailForm").style.display = "none";
+    document.getElementById("displayAddressDiv").style.display = "block";
+
+
 
     // ------------------ Saved Address Display ------------------------
 
-        let elem = addressArray[addressArray.length -1];
-    
-        let diplaySavedAddress = document.createElement("div");
-        diplaySavedAddress.setAttribute("class","savedAddress")
+    let elem = addressArray[addressArray.length - 1];
 
-        let firstDiv = document.createElement("div");
-        let secondDiv = document.createElement("div");
+    let diplaySavedAddress = document.createElement("div");
+    diplaySavedAddress.setAttribute("class", "savedAddress")
 
-        let deliveryAddress = document.createElement("h4");
-        deliveryAddress.textContent = "Delivery Address";
+    let firstDiv = document.createElement("div");
+    let secondDiv = document.createElement("div");
 
-        let fullAddress = document.createElement("p");
-        fullAddress.style.color = "#60b246";
-        fullAddress.style.padding = "8px";
-        fullAddress.style.textAlign = "center"
-        fullAddress.textContent = elem.houseNo+" "+elem.area+" "+elem.landmark+" "+elem.city;
+    let deliveryAddress = document.createElement("h4");
+    deliveryAddress.textContent = "Delivery Address";
 
-        secondDiv.append(deliveryAddress, fullAddress);
+    let fullAddress = document.createElement("p");
+    fullAddress.style.color = "#60b246";
+    fullAddress.style.padding = "8px";
+    fullAddress.style.textAlign = "center"
+    fullAddress.textContent = elem.houseNo + " " + elem.area + " " + elem.landmark + " " + elem.city;
 
-        firstDiv.append(secondDiv);
-        diplaySavedAddress.append(firstDiv);
+    secondDiv.append(deliveryAddress, fullAddress);
 
-        document.getElementById("displayAddressDiv").append(diplaySavedAddress);
+    firstDiv.append(secondDiv);
+    diplaySavedAddress.append(firstDiv);
+
+    document.getElementById("displayAddressDiv").append(diplaySavedAddress);
 
     // ---------------------------------------------------
 
@@ -259,24 +260,24 @@ function addressSaveFun(){
 
 // Promo Input function -----------------------
 
-function promoValue(){
-        console.log("Hiii");
+function promoValue() {
+    console.log("Hiii");
     let Promovalue = document.getElementById("promoInput").value;
     let totalvalue;
-    let aftertax ;
-    if (Promovalue == "YOO10"){
+    let aftertax;
+    if (Promovalue == "welcome10") {
         console.log(totalPrice);
-        totalvalue = (totalPrice - totalPrice*10/100).toFixed(2);
-        aftertax = ((18*totalvalue)%100).toFixed(2);
+        totalvalue = (totalPrice - totalPrice * 10 / 100).toFixed(2);
+        aftertax = ((18 * totalvalue) % 100).toFixed(2);
         document.getElementById("itemsTotalNum").innerText = totalvalue;
-    document.getElementById("govtChargesNum").innerText = aftertax;
-    finaltotalPromo = (Math.floor(totalvalue) +Math.floor(aftertax)).toFixed(2);
-    document.getElementById("toPayAmmount").innerText = finaltotalPromo;
-    document.getElementById("displayAmmount").textContent="  ₹"+ finaltotalPromo;
+        document.getElementById("govtChargesNum").innerText = aftertax;
+        finaltotalPromo = (Math.floor(totalvalue) + Math.floor(aftertax)).toFixed(2);
+        document.getElementById("toPayAmmount").innerText = finaltotalPromo;
+        document.getElementById("displayAmmount").textContent = "  ₹" + finaltotalPromo;
     }
-    else{
+    else {
         alert("Please Check the Coupon Code");
     }
     // document.getElementById("" 
-// >>>>>>> 3a1fa0881cc4b7ac9e7554be0fd4a0e0d8782bba
+    // >>>>>>> 3a1fa0881cc4b7ac9e7554be0fd4a0e0d8782bba
 }
