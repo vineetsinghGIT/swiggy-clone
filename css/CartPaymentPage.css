@@ -1,0 +1,389 @@
+body{
+    background-color: #e9ecee;
+    font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+/* <<<<<<< HEAD
+=======
+
+>>>>>>> 3a1fa0881cc4b7ac9e7554be0fd4a0e0d8782bba */
+}
+
+.displayNav{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    justify-content: space-between;
+}
+
+#navLogo{
+    width: 80px;
+    height: 80px;
+}
+
+.secureCheckout{
+    width: 400px;
+    padding-left: 18px;
+    font-size: 700;
+    text-transform: uppercase;
+    color: #3d4152;
+}
+
+.ullist{
+    margin-left:100px ;
+    width: 400px;
+    display: flex;
+    align-items: center;
+}
+
+ul{
+    list-style: none;    
+}
+
+/* navbar ends */
+
+
+
+/* --------------Payment Card------------------- */
+
+#payementCard{
+    width: 600px;
+    background-color: white;
+    /* height: 400px; */
+}
+
+.mid_container{
+    display: flex;
+}
+
+#paymentBox{
+    position: absolute;
+    padding: 18px, 8px 8px, 16px;
+    background-color: white;
+    /* background-color: white; */
+}
+
+#paymentBox h3{
+    margin-top: 28px;
+    text-align: center;
+}
+
+.paymentMethod img{
+    margin-right: 16px;
+}
+
+.inputField{
+    margin: 8px;
+}
+
+.inputField  input{
+    /* width: 300px;
+    height: 40px;
+     */
+     background-color: transparent;
+    line-height: normal;
+    border: grey solid 1px;
+    outline: none;
+    height: 70px;
+    width: 100%;
+    font-size: 17px;
+    margin: 0;
+    padding: 0 20px;
+    padding-top: 22px;
+    box-shadow: none;
+    box-sizing: border-box;
+    border-radius: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+}
+
+.inputField > div > input{
+    width: 300px;
+    border: grey solid 1px;
+    margin: 0px ;
+    
+}
+
+.inputField > div > input+input{
+    width: 221.6px;
+}
+
+#buton{
+    display: flex;
+    justify-content: center;
+}
+
+#payBtn{
+    width: 200px;
+    padding: 12px;
+    text-align: center;
+    color: white;
+    background-color: #60b246;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 25px;
+}
+
+#addnewCard{
+    color: #282c3f;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 25px;
+    margin-left: 18px ;
+}
+
+#weAccept{
+    font-size: 12px;
+    font-weight: 500;
+    color: #7e808c;
+    white-space: nowrap;
+    text-transform: uppercase;
+    margin-right: 5px;
+    margin-left: 18px ;
+}
+
+/* ---------------Payment Card End---------------- */
+
+/* -----------------Cart Box Display---------------- */
+
+#cartBox{
+    background-color: white;
+    /* margin-top: 20px; */
+    padding: 48px;
+    
+
+    /* display: flex; */
+}
+
+.mid_container{
+    display: flex;
+    justify-content: center;
+}
+
+.toPayClass{
+    font-weight: 600;
+    color: #282c3f;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.quantiyDiv{
+    display: flex;
+/* <<<<<<< HEAD */
+    border: #7e808c dotted 1px;
+    margin-right: 8px;
+    height: 40px;
+/* ======= */
+    border: 1px solid rgb(230, 220, 220);
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+/* >>>>>>> 3a1fa0881cc4b7ac9e7554be0fd4a0e0d8782bba */
+}
+
+.quantiyDiv button{
+    width: 30px;
+    font-size: 16px;
+    margin: 0px 4px;
+    border: none;
+    background-color: white;
+    color: #60b246;
+    align-items: center;
+}
+
+.buyedItems{
+    display: flex;
+/* <<<<<<< HEAD */
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 8px;
+/* ======= */
+    align-items: center;
+    justify-content: space-between;
+/* >>>>>>> 3a1fa0881cc4b7ac9e7554be0fd4a0e0d8782bba */
+}
+
+.cartBox  p{
+    font-size: 13px;
+    color: #535665;
+}
+
+.itemsQuantity{
+    color: #60b246;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.itemsTotalClass, .govtChargesClass{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.buyedItemsNames{
+    width: 230px;
+}
+
+.toPayClass{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+    cursor: pointer;
+}
+
+/* <<<<<<< HEAD */
+#cartBox  p{
+    font-size: 13px;
+}
+
+/* ----------------- Add new address ------------------ */
+
+#displayAddress{
+    background-color: white;
+    width: 542.50px;
+    margin-bottom: 28px;
+}
+
+#newAddressSave{
+    width: 324px;
+    height: 218px;
+}
+
+/* #newAddressSave div{
+    display: flex;
+    flex-direction: column;
+    width: 218.59px;
+    height: 164.6px;
+    padding: 23px 30px ;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 300;
+    border: #7e808c solid 1px;
+    
+} */
+
+#newAddressSave >div {
+    width: 218.59px;
+    height: 164.6px;
+    padding: 23px 30px ;
+}
+
+#newAddressSave >div>div {
+    display: flex;
+    height: 164.6px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 300;
+    border: #7e808c dotted 1px;
+} 
+
+#addNewAddress{
+    width: 130px;
+    height: 34px;
+    color: #60b246;
+    border: #60b246 solid 1px;
+    background-color: white;
+}
+
+#adressDetailForm{
+    display: none;
+    padding: 20px;
+}
+
+#addressInput{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+#addressInput input{
+    background-color: transparent;
+    line-height: normal;
+    border: grey solid 1px;
+    outline: none;
+    height: 70px;
+    width: 100%;
+    font-size: 17px;
+    margin: 0;
+    padding: 0 20px;
+    padding-top: 22px;
+    box-shadow: none;
+    box-sizing: border-box;
+    border-radius: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+}
+
+#addBtnDiv{
+    display: flex;
+    justify-content: center;
+}
+
+#addreeSaveBtn{
+    width: 300px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #fc8019;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.12);
+    font-weight: 600;
+    border: none;
+}
+/* ======= */
+#promoDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 16px;
+}
+#promoDiv > input {
+    width: 180px;
+    height: 21px;
+    padding: 10px;
+    font-weight: 600;
+    border: 1px solid rgb(190, 188, 188);
+}
+#promoDiv > button {
+    padding: 14px 25px 14px 25px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #fc8019;
+    border: none;
+    color: white;
+
+}
+/* >>>>>>> 3a1fa0881cc4b7ac9e7554be0fd4a0e0d8782bba */
+
+
+.savedAddress >div {
+    width: 218.59px;
+    height: 164.6px;
+    padding: 23px 30px;
+}
+
+.savedAddress >div>div {
+    display: flex;
+    width: 218.59px;
+    height: 164.6px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: 300;
+    border: #7e808c dotted 1px;
+    /* margin-left: 20px ; */
+} 
+
+/* #displayAddressDiv{
+    display: grid;
+    grid-template-columns: repeat(1fr , 2);
+} */

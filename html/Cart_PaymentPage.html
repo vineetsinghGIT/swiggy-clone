@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/CartPaymentPage.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root" style="height: 100%;">
+        <div class="_3arMG">
+            <!-- <header class="nav_bar">
+                <div class="global_nav">
+                    <div class="displayNav">
+                        <a href="#"><img id="navLogo" src="https://logosandtypes.com/wp-content/uploads/2021/01/Swiggy.png" alt=""></a>
+                        <div class="secureCheckout">
+                            <span>Secure Checkout</span>
+                        </div>
+                        <ul class="ullist">
+                            <li>Help</li>
+                            <li id="accountDetails"></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </header> -->
+            <div class="mid_container">
+                <div id="container">
+                    <div id="deliveryAddress">
+                        
+                        <div id="displayAddress">
+                            <h3 style="padding-top: 18px; margin: 0 8px 8px 8px; text-align: center;">Select Delivery Address</h3>
+                            <div id="displayAddressDiv">
+                                <div id="newAddressSave">
+                                    <div>
+                                        <div>
+                                            <p>Add New Address</p>
+                                            <button id="addNewAddress">Add New</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div id="adressDetailForm">
+                                <h4>Address</h4>
+                                <div id="addressInput">
+                                    <input type="text" name="house No" id="house" placeholder="Door / Flat No." required>
+                                    <input type="text" name="area" id="area" placeholder="Area" required>
+                                    <input type="text" name="Landmark" id="landmark" placeholder="Landmark" required>
+                                    <input type="text" name="City" id="city" placeholder="City " required>
+                                </div>
+                                <div id="addBtnDiv">
+                                    <button id="addreeSaveBtn">Save Address & Proceed</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="payementCard">
+                        <div id="paymentBox">
+                            <h3>Choose payment method</h3>
+                            <div>
+                                <p id="addnewCard">Add new Card</p>
+                                <div class="paymentMethod">
+                                    <span id="weAccept">WE ACCEPT</span>
+                                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/Visa_lztyeu" alt="" style="width: 37.06px; height: 12px;">
+                                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/Mastercard_wqoea2" alt="" style="width: 23.49px; height: 14px;">
+                                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/Amex_ozga1w" alt="" style="width: 22.4px; height: 14px;">
+                                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/Zeta_zybqrc" alt="" style="width: 32.29px; height: 12px;">
+                                    <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,e_trim/RuPayColoured_oyd73s_soebkd" alt="" style="width: 53.48px; height: 14px;">
+                                </div>
+                                <div class="inputField">
+                                    <input type="text" name="cardNumber" placeholder="Card Number" id="card_number"  maxlength="16" required>
+                                    <div>
+                                        <input type="text" placeholder="Valid through (MM/YY)" id="mmyy"  maxlength="5" required>
+                                        <input type="text" placeholder="CVV" id="cvv" maxlength="3" required> 
+                                    </div>
+                                    <input type="text" placeholder="Name on Card" id="nameonCard" required><br>
+                                </div>
+                                <div id="buton">
+                                    <button id="payBtn">Pay<span id="displayAmmount"></span></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="cartBox">
+                    
+                </div>
+            </div>
+            <div class="footer">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+let DataArray = [
+    {name : "Aloo Patty Cheese Pull Sandwich",
+    price : 261.90,
+    desc : "Serves 1 | A toasted, cheesy aloo patty Sub. This warm sandwich comes with crunch of onions & capsicum. Offers minimal customization. Serving size : 15 cm - 214 g / 526 kcal , 30 cm - 428 g / 1052 kcal. Allergens - Contains wheat, rye, barley, oats, milk. Values include multigrain bread, recommended sauces, cheese, capsicum and onion.",
+    image : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/50a6664c08beb7e26ca108ac3f2f9383",
+    i: 1,
+    },
+    {name : "Chatpata Chana Cheese Pull Sandwich",
+    price : 261.90,
+    desc : "Serves 1 | A toasted, cheesy aloo patty Sub. This warm sandwich comes with crunch of onions & capsicum. Offers minimal customization. Serving size : 15 cm - 214 g / 526 kcal , 30 cm - 428 g / 1052 kcal. Allergens - Contains wheat, rye, barley, oats, milk. Values include multigrain bread, recommended sauces, cheese, capsicum and onion.",
+    image : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/50a6664c08beb7e26ca108ac3f2f9383",
+    i: 1,
+    },
+    {name : "B.M.T Cheese Pull Sandwitch",
+    price : 309.52,
+    desc : "Serves 1 | A toasted, cheesy Sub with meaty layers of tasty chicken pepperoni, smoked chicken slice. This warm sandwich comes with crunch of onions & capsicum. Offers minimal customization. Serving size : 15 cm - 240 g / 571 kcal , 30 cm - 480 g / 1142 kcal. Allergens - Contains wheat, rye, barley, oats, milk , soy. Values include multigrain bread, recommended sauces, cheese, capsicum and onion.",
+    image : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/sej4xnxeaii1xlyxfxvw",
+    i: 1,
+    },
+    {name : "Egg & Cheese Sandwich",
+    price : 195.20,
+    desc : "Serves 1 | A classic for a reason. Our egg and cheese is simply delicious. Enjoy high protein fluffy egg omelet with cheese. Try it toasted - It's unbeatable. Serving size : 15 cm - 154 g / 366 kcal , 30 cm - 308 g / 732 kcal. Allergens - Contains wheat, rye, barley, oats, egg, milk, soy. Values include multigrain bread and American Cheese.",
+    image : "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/50a6664c08beb7e26ca108ac3f2f9383",
+    i: 1,
+    }
+]
+
+localStorage.setItem("cartItems",JSON.stringify(DataArray))</script>
+<script type="text/javascript" src="../js/Cart_PaymentPage.js"></script>
