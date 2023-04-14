@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Swiggy Signup Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+	<div class="container">
+    
+    <img src="swiggy-logo.png" alt="Swiggy Logo">
+		<h1> Signup</h1>
+		<form id="signup-form">
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" required>
+				<span class="error-message" id="name-error"></span>
+			</div>
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required>
+				<span class="error-message" id="email-error"></span>
+			</div>
+			<div class="form-group">
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" required>
+				<span class="error-message" id="password-error"></span>
+			</div>
+			<div class="form-group">
+				<label for="confirm-password">Confirm Password:</label>
+				<input type="password" id="confirm-password" name="confirm-password" required>
+				<span class="error-message" id="confirm-password-error"></span>
+			</div>
+			<div class="form-group">
+				<label for="mobile">Mobile Number:</label>
+				<input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+				<span class="error-message" id="mobile-error"></span>
+			</div>
+      <a href="homepage.html"><button type="submit" class="btn">Sign Up</button></a>
+			
+		</form>
+		<div class="login-link">
+			<p>Already have an account? <a href="login.html">Login</a></p>
+		</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
