@@ -360,6 +360,11 @@ let displayData = (northdata) => {
         let rating = document.createElement("span");
         rating.textContent = " ★ " + data.rating;
         rating.classList.add("rating-container");
+        rating.style.color = "white";
+        if (data.rating < 2.5) {
+            rating.classList.add("rating-container-org");
+        }
+
 
         let avgcost = document.createElement("p");
         avgcost.textContent = "•  " + " ₹ " + data.average_cost + " FOR TWO";

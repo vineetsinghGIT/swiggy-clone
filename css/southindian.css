@@ -116,7 +116,14 @@ body {
 
 .rating-container {
     margin-right: 15%;
-    background-color: lightgreen;
+    background-color: #48c479;
+    padding: 4px;
+
+}
+
+.rating-container-org {
+    margin-right: 15%;
+    background-color: rgb(251, 188, 4);
     padding: 4px;
 
 }
