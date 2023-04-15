@@ -12,7 +12,7 @@ const passwordError = document.getElementById('password-error');
 const confirmPasswordError = document.getElementById('confirm-password-error');
 const mobileError = document.getElementById('mobile-error');
 
-// Add submit event listener to form
+
 signupForm.addEventListener('submit', (event) => {
   // Prevent form submission
   event.preventDefault();
@@ -96,7 +96,7 @@ signupForm.addEventListener('submit', (event) => {
 
   // Show success message
   alert('Sign up successful');
-  window.location.href = "homepage.html";
+  window.location.href = "../index.html";
 });
 
 // Function to validate email address
