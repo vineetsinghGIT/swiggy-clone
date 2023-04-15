@@ -1,16 +1,132 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Swiggy Signup Page</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	 
+
+	<style>
+		html {
+			font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+
+		}
+
+		/* Navbar container */
+		.navbar {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			/* background-color: white; */
+			/* border: #080808 dashed; */
+
+
+		}
+
+		/* Logo image */
+		.logo {
+			width: 50px;
+			height: 75px;
+			/* margin-right: -20px; */
+			margin-left: 70px;
+		}
+
+		.logo1 {
+			width: 50px;
+			height: 50px;
+
+			margin-left: 40px;
+		}
+
+		/* Logo name */
+		.logo-name {
+			color: #0b0b0b;
+			font-size: 24px;
+			font-weight: bold;
+			text-decoration: none;
+		}
+
+
+
+		/* Account logo */
+		.account-logo {
+			color: #080808;
+			text-decoration: none;
+			padding-left: 70px;
+
+		}
+
+		/* Account logo image */
+		.account-logo img {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			margin-right: 5px;
+		}
+
+		.nava span {
+			font-size: 15px;
+			font-weight: bold;
+		}
+
+		.nava {
+			display: flex;
+			padding-left: 100px;
+			padding-right: 100px;
+			align-items: center;
+		}
+	</style>
+
 </head>
 <link rel="stylesheet" href="style.css">
+
 <body>
+	<!-- Navbar -->
+	<div class="navbar">
+		<div class="nav">
+			<img src="https://cdn.worldvectorlogo.com/logos/swiggy-1.svg" alt="Logo" class="logo">
+
+		</div>
+		<div class="nava">
+			<a href="#" class="account-logo">
+				<img src="https://www.pngitem.com/pimgs/m/147-1477374_search-bar-icon-search-bar-png-transparent-png.png"
+					alt="Account Logo">
+			</a>
+			<span class="new">Search</span>
+
+			<a href="#" class="account-logo">
+				<img src="https://img.favpng.com/7/25/12/vecteezy-png-favpng-WSTfntFnYj6nFb8ZKhyN05F99.jpg"
+					alt="Account Logo">
+			</a>
+			<span>Offers</span>
+
+			<a href="#" class="account-logo">
+				<img src="https://thumbs.dreamstime.com/b/icon-support-customer-service-call-center-vector-icons-help-phone-contact-business-line-symbol-communication-telephone-technology-140920512.jpg"
+					alt="Account Logo">
+			</a>
+			<span>Help</span>
+
+			<a href="#" class="account-logo">
+				<img src="https://cdn-icons-png.flaticon.com/512/61/61135.png" alt="Account Logo">
+			</a>
+			<span>Sign In</span>
+
+			<a href="#" class="account-logo">
+
+				<img src="https://media.istockphoto.com/id/1184670036/vector/shopping-cart-line-icon-fast-buy-vector-logo.jpg?s=612x612&w=0&k=20&c=zyExmQoKgH4UZTwMa41Zo9x1TzQYcQy_5zQcHaEL0SQ="
+					alt="Account Logo">
+			</a>
+			<span>cart</span>
+
+
+		</div>
+	</div>
+
+	<!--  -->
+
 	<div class="container">
-    
-    <img src="swiggy-logo.png" alt="Swiggy Logo">
+
+		<img src="swiggy-logo.png" alt="Swiggy Logo">
 		<h1> Signup</h1>
 		<form id="signup-form">
 			<div class="form-group">
@@ -38,8 +154,8 @@
 				<input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
 				<span class="error-message" id="mobile-error"></span>
 			</div>
-      <a href="homepage.html"><button type="submit" class="btn">Sign Up</button></a>
-			
+			<a href="../index.html"><button type="submit" class="btn">Sign Up</button></a>
+
 		</form>
 		<div class="login-link">
 			<p>Already have an account? <a href="login.html">Login</a></p>
@@ -47,4 +163,5 @@
 	</div>
 	<script src="script.js"></script>
 </body>
+
 </html>

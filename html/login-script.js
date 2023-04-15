@@ -16,7 +16,7 @@ form.addEventListener('submit', function(event) {
     alertBox.innerHTML = 'Invalid email or password <span class="close-btn">&times;</span>';
     form.appendChild(alertBox);
   } else {
-    window.location.href = "homepage.html";
+    window.location.href = "../index.html";
   }
 });
 
